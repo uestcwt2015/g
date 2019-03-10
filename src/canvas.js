@@ -5,6 +5,7 @@ const Timeline = require('./core/mixin/timeline');
 const renderers = require('./renderers/index');
 
 const Canvas = function(cfg) {
+  // 初始化Group
   Canvas.superclass.constructor.call(this, cfg);
 };
 
@@ -62,8 +63,11 @@ Canvas.CFG = {
   renderer: 'canvas'
 };
 
+// Canvas.superclass = new Group();
+// Canvas.prototype中混入父类的方法
 Util.extend(Canvas, Group);
 
+// 添加方法到原型
 Util.augment(Canvas, Event, {
   init() {
     Canvas.superclass.init.call(this);

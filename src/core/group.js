@@ -30,7 +30,7 @@ function find(children, x, y) {
 }
 
 const Group = function(cfg) {
-  Group.superclass.constructor.call(this, cfg);
+  Group.superclass.constructor.call(this, cfg); // 初始化Element
   this.set('children', []);
   this.set('tobeRemoved', []);
 
